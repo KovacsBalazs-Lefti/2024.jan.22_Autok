@@ -11,7 +11,7 @@ namespace _2024.jan._22_Autok
         string rendszam;
         string marka;
         string modell;
-        int gyartasiev;
+        DateTime gyartasiev;
         DateTime forgalmiErvenyesseg;
         int vetelar;
         int kmallas;
@@ -22,7 +22,7 @@ namespace _2024.jan._22_Autok
         public string Rendszam { get => rendszam; set => rendszam = value; }
         public string Marka { get => marka; set => marka = value; }
         public string Modell { get => modell; set => modell = value; }
-        public int Gyartasiev { get => gyartasiev; set => gyartasiev = value; }
+        public DateTime Gyartasiev { get => gyartasiev; set => gyartasiev = value; }
         public DateTime ForgalmiErvenyesseg { get => forgalmiErvenyesseg; set => forgalmiErvenyesseg = value; }
         public int Vetelar { get => vetelar; set => vetelar = value; }
         public int Kmallas { get => kmallas; set => kmallas = value; }
@@ -30,7 +30,7 @@ namespace _2024.jan._22_Autok
         public int Tomeg { get => tomeg; set => tomeg = value; }
         public int Teljesitmeny { get => teljesitmeny; set => teljesitmeny = value; }
 
-        public Autok(string rendszam, string marka, string modell,int gyartasiev, DateTime forgalmiErvenyesseg, int vetelar, int kmallas, int hengerűrtartalom, int tomeg, int teljesitmeny)
+        public Autok(string rendszam, string marka, string modell,DateTime gyartasiev, DateTime forgalmiErvenyesseg, int vetelar, int kmallas, int hengerűrtartalom, int tomeg, int teljesitmeny)
         {
             Rendszam = rendszam;
             Marka = marka;
@@ -43,6 +43,12 @@ namespace _2024.jan._22_Autok
             Tomeg = tomeg;
             Teljesitmeny = teljesitmeny;
         }
+        
+        public Autok() 
+        {
+
+        }
+
         public override string ToString()
         {
             return $"{this.marka} {this.modell} ({this.vetelar})";

@@ -82,6 +82,7 @@
             // 
             this.textBox_Rendszam.Location = new System.Drawing.Point(50, 98);
             this.textBox_Rendszam.Name = "textBox_Rendszam";
+            this.textBox_Rendszam.ReadOnly = true;
             this.textBox_Rendszam.Size = new System.Drawing.Size(157, 27);
             this.textBox_Rendszam.TabIndex = 1;
             // 
@@ -425,7 +426,6 @@
         #endregion
 
         private System.Windows.Forms.Label Rendszam;
-        private System.Windows.Forms.TextBox textBox_Rendszam;
         private System.Windows.Forms.PictureBox pictureBox_Autok;
         private System.Windows.Forms.Label marka;
         private System.Windows.Forms.TextBox textBox_Marka;
@@ -454,5 +454,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDown_Teljesitmeny;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button1_Muvelet;
+        private System.Windows.Forms.TextBox textBox_Rendszam;
     }
 }

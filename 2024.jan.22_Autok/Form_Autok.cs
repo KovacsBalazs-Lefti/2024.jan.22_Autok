@@ -82,8 +82,9 @@ namespace _2024.jan._22_Autok
                     button1_Muvelet.BackColor = Color.Blue;
                     button1_Muvelet.ForeColor = Color.White;
                     button1_Muvelet.Click += new EventHandler(updateAuto);
-                    break;
                     adatmezokFeltoltese();
+                    break;
+                    
 
                 case "delete":
 
@@ -92,6 +93,7 @@ namespace _2024.jan._22_Autok
                     button1_Muvelet.BackColor = Color.Red;
                     button1_Muvelet.ForeColor = Color.White;
                     button1_Muvelet.Click += new EventHandler(deleteAuto);
+                    adatmezokFeltoltese();
                     break;
             }
         }
@@ -102,11 +104,11 @@ namespace _2024.jan._22_Autok
             textBox_Rendszam.Text = autok.Rendszam.ToString();
             textBox_Marka.Text = autok.Marka.ToString();
             textBox_Modell.Text = autok.Modell.ToString();
-            dateTimePicker_GyartasiEv.Text = autok.Gyartasiev.ToString();
-            dateTimePicker_ForgalmiErvenyesseeg.Text = autok.ForgalmiErvenyesseg.ToString();
+            dateTimePicker_GyartasiEv.Value = autok.Gyartasiev;
+            dateTimePicker_ForgalmiErvenyesseeg.Value = autok.ForgalmiErvenyesseg;
             numericUpDown_VetelarFt.Value = (decimal)autok.Vetelar;
             numericUpDown_hengerurtartalom.Value = (decimal)autok.Hengerűrtartalom;
-            numericUpDown_Tomgeg = (decimal)autok.Tomeg;
+            numericUpDown_Tomgeg.Value = (decimal) autok.Tomeg;
             numericUpDown_Teljesitmeny.Value = (decimal)autok.Teljesitmeny;
             
                         
@@ -119,7 +121,11 @@ namespace _2024.jan._22_Autok
 
         private void updateAuto(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Autok autok = new Autok();
+            autok.Rendszam = int.Parse(textBox_Rendszam.Text);
+            autok.Marka=textBox_Marka.Text;
+            autok.Modell=textBox_Modell.Text;
+            Program.db.updateAuto(autok);
         }
 
         private void insertAuto(object sender, EventArgs e)
