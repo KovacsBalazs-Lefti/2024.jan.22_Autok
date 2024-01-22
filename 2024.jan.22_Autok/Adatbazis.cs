@@ -63,13 +63,14 @@ namespace _2024.jan._22_Autok
                         string rendszam = dr.GetString("rendszam");
                         string marka = dr.GetString("marka");
                         string modell = dr.GetString("modell");
-                        DateTime gyartasiev;
-                        DateTime forgalmiErvenyesseg;
-                        int vetelar;
-                        int kmallas;
-                        int hengerurtartalom;
-                        int tomeg;
-                        int teljesitmeny;
+                        int gyartasiev = dr.GetInt32("gyartasiev");
+                        DateTime forgalmiErvenyesseg = dr.GetDateTime("forgalmiErvenyesseg");
+                        int vetelar = dr.GetInt32("vetelar");
+                        int kmallas = dr.GetInt32("kmallas"); ;
+                        int hengerűrtartalom = dr.GetInt32("hengerűrtartalom"); ;
+                        int tomeg = dr.GetInt32("tomeg"); ;
+                        int teljesitmeny = dr.GetInt32("teljesitmeny");
+                        autoklista.Add(new Autok(rendszam, marka, modell, gyartasiev, forgalmiErvenyesseg, vetelar, kmallas, hengerűrtartalom, tomeg, teljesitmeny));
                     }
                 }
             }

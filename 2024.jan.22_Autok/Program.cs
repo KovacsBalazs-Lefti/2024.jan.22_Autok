@@ -10,6 +10,7 @@ namespace _2024.jan._22_Autok
     {
        public static List<Autok> autoklista = new List<Autok>();
         public static Adatbazis db = null;
+        public static Form_Nyito form_Nyito = null;
 
         public static void Main()
 
@@ -18,7 +19,8 @@ namespace _2024.jan._22_Autok
             Application.SetCompatibleTextRenderingDefault(false);
             db = new Adatbazis();
             autoklista = db.getAllAutok();
-            Application.Run(new Form_Nyito());
+            form_Nyito = new Form_Nyito();
+            Application.Run(form_Nyito);
         }
     }
 }

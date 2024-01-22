@@ -409,6 +409,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form_Autok";
             this.Text = "Form_Autok";
+            this.Load += new System.EventHandler(this.Form_Autok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Autok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_VetelarFt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_VetelArEuro)).EndInit();

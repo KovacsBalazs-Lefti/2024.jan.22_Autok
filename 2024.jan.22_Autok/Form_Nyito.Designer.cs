@@ -35,6 +35,7 @@
             this.módosítToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.törölToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox_Autok = new System.Windows.Forms.ListBox();
+            this.panel_AutoGyartok = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,20 +63,23 @@
             // újToolStripMenuItem
             // 
             this.újToolStripMenuItem.Name = "újToolStripMenuItem";
-            this.újToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.újToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.újToolStripMenuItem.Text = "Új";
+            this.újToolStripMenuItem.Click += new System.EventHandler(this.újToolStripMenuItem_Click);
             // 
             // módosítToolStripMenuItem
             // 
             this.módosítToolStripMenuItem.Name = "módosítToolStripMenuItem";
-            this.módosítToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.módosítToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.módosítToolStripMenuItem.Text = "Módosít";
+            this.módosítToolStripMenuItem.Click += new System.EventHandler(this.módosítToolStripMenuItem_Click);
             // 
             // törölToolStripMenuItem
             // 
             this.törölToolStripMenuItem.Name = "törölToolStripMenuItem";
-            this.törölToolStripMenuItem.Size = new System.Drawing.Size(147, 26);
+            this.törölToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.törölToolStripMenuItem.Text = "Töröl";
+            this.törölToolStripMenuItem.Click += new System.EventHandler(this.törölToolStripMenuItem_Click);
             // 
             // listBox_Autok
             // 
@@ -87,11 +91,19 @@
             this.listBox_Autok.Size = new System.Drawing.Size(259, 422);
             this.listBox_Autok.TabIndex = 1;
             // 
+            // panel_AutoGyartok
+            // 
+            this.panel_AutoGyartok.Location = new System.Drawing.Point(323, 28);
+            this.panel_AutoGyartok.Name = "panel_AutoGyartok";
+            this.panel_AutoGyartok.Size = new System.Drawing.Size(271, 410);
+            this.panel_AutoGyartok.TabIndex = 2;
+            // 
             // Form_Nyito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel_AutoGyartok);
             this.Controls.Add(this.listBox_Autok);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -113,7 +125,8 @@
         private System.Windows.Forms.ToolStripMenuItem újToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem módosítToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem törölToolStripMenuItem;
-        private System.Windows.Forms.ListBox listBox_Autok;
+        private System.Windows.Forms.Panel panel_AutoGyartok;
+        public System.Windows.Forms.ListBox listBox_Autok;
     }
 }
 

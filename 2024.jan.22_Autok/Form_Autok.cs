@@ -12,9 +12,11 @@ namespace _2024.jan._22_Autok
 {
     public partial class Form_Autok : Form
     {
-        public Form_Autok()
+        string muvelet;
+        public Form_Autok(string muvelet)
         {
             InitializeComponent();
+            this.muvelet = muvelet;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -61,6 +63,68 @@ namespace _2024.jan._22_Autok
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form_Autok_Load(object sender, EventArgs e)
+        {
+            switch (muvelet) 
+            {
+                case "add":
+                    this.Text = "Új laptop";
+                    button1_Muvelet.Text = "Rögzítés";
+                    button1_Muvelet.BackColor = Color.Green;
+                    button1_Muvelet.Click += new EventHandler(insertAuto);
+                    break;
+
+                case "edit":
+                    this.Text = "Módosítás";
+                    button1_Muvelet.Text = "Módosítás";
+                    button1_Muvelet.BackColor = Color.Blue;
+                    button1_Muvelet.ForeColor = Color.White;
+                    button1_Muvelet.Click += new EventHandler(updateAuto);
+                    break;
+                    adatmezokFeltoltese();
+
+                case "delete":
+
+                    this.Text = "Törlés";
+                    button1_Muvelet.Text = "Törlés";
+                    button1_Muvelet.BackColor = Color.Red;
+                    button1_Muvelet.ForeColor = Color.White;
+                    button1_Muvelet.Click += new EventHandler(deleteAuto);
+                    break;
+            }
+        }
+
+        private void adatmezokFeltoltese()
+        {
+            Autok autok = (Autok)Program.form_Nyito.listBox_Autok.SelectedItem;
+            textBox_Rendszam.Text = autok.Rendszam.ToString();
+            textBox_Marka.Text = autok.Marka.ToString();
+            textBox_Modell.Text = autok.Modell.ToString();
+            dateTimePicker_GyartasiEv.Text = autok.Gyartasiev.ToString();
+            dateTimePicker_ForgalmiErvenyesseeg.Text = autok.ForgalmiErvenyesseg.ToString();
+            numericUpDown_VetelarFt.Value = (decimal)autok.Vetelar;
+            numericUpDown_hengerurtartalom.Value = (decimal)autok.Hengerűrtartalom;
+            numericUpDown_Tomgeg = (decimal)autok.Tomeg;
+            numericUpDown_Teljesitmeny.Value = (decimal)autok.Teljesitmeny;
+            
+                        
+        }
+
+        private void deleteAuto(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void updateAuto(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void insertAuto(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
